@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yjedu.zxt">
+
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 在SDCard中创建与删除文件权限 -->
+    <permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /> <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 允许应用程序开始运行某个包。 -->
+    <uses-permission android:name="android.permission.RUN_INSTRUMENTATION" /> <!-- 允许读取电话状态SIM的权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!--
+             开发模式，debug:调试（开发）模式，test:测试模式，pro:生产模式,debug_outside:外面用笔记本开发的模式，
+                    注意配合网络连接类型，如果是动态，地址是用 "|" 把端口号隔开
+        -->
+        <meta-data
+            android:name="DEV_MODEL"
+            android:value="pro" />
+        <!-- 网络连接类型  dynamic：动态地址,static:静态地址 -->
+        <meta-data
+            android:name="ConnectionType"
+            android:value="dynamic" />
+        <activity android:name=".LogDataActivity"></activity>
+        <activity android:name=".STKActivity" />
+        <activity android:name=".SJKActivity" />
+        <activity android:name=".HOMEActivity" />
+        <activity android:name=".act.testPaper.ExamActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

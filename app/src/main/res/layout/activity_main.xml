@@ -1,0 +1,86 @@
+<com.yjedu.zxt.SlideHolder xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/holder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+    <ScrollView
+        android:layout_width="200dp"
+        android:layout_height="fill_parent"
+        android:background="@color/skyblue"
+        >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+
+            >
+
+            <Button
+                android:id="@+id/menu1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="菜单11"
+                android:textColor="#ffffff"
+                android:textSize="25sp"
+                />
+            <Button
+                android:id="@+id/log"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="日志"
+                android:textColor="#ffffff"
+                android:textSize="25sp"
+                />
+
+
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="@color/papayawhip"
+        >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            >
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/menulist_btn_icon"
+                android:background="#0000"
+                />
+
+        </LinearLayout>
+
+        <TabHost
+            android:id="@android:id/tabhost"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:padding="0dp">
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/gainsboro"
+                    android:padding="0dp" />
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="2dp"
+                    />
+
+            </LinearLayout>
+        </TabHost>
+
+    </LinearLayout>
+</com.yjedu.zxt.SlideHolder>

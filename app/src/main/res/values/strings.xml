@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">掌学堂</string>
+    <string name="action_settings">Settings</string>
+    <string name="file_path">/YJEDU</string>
+    <string name="file_pic_path">/YJEDU/pic</string>
+    <string name="title_activity_qj">QJActivity</string>
+    <string name="title_activity_bs">BSActivity</string>
+    <string name="title_activity_fj">FJActivity</string>
+    <string name="title_activity_test__bab_">Test_Bab_Activity</string>
+    <string name="title_activity_feng_zu_list_view">FengZuListViewActivity</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_log_data">LogDataActivity</string>
+
+    <string-array name="menu_array">
+        <item>Menu 1</item>
+        <item>Menu 2</item>
+        <item>Menu 3</item>
+        <item>Menu 4</item>
+    </string-array>
+    <string-array name="menu_Logtype">
+        <item></item>
+        <item>Error</item>
+        <item>General</item>
+        <item>Warning</item>
+    </string-array>
+
+    <string name="title_activity_exam">ExamActivity</string>
+</resources>
