@@ -46,7 +46,7 @@ public class LogDataActivity extends Activity {
         //mySpinner.setAdapter(myaAdapter);
 
 
-        final Spinner mySpinner = (Spinner) findViewById(R.id.spinlogtype);
+        final Spinner mySpinner = (Spinner)findViewById(R.id.spinlogtype);
 
         List<TextValueItem> lst   = logdata.GetLogTypeList();
 

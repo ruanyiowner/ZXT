@@ -1,7 +1,7 @@
 package com.yjedu.zxt.db.model;
 
 public class Person {
-    public int _id;
+    public int ID;
     public String name;
     public int age;
     public String info;

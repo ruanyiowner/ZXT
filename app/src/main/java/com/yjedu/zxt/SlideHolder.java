@@ -1,8 +1,5 @@
 package com.yjedu.zxt;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -19,7 +16,9 @@ import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
-import android.widget.Toast;
+
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class SlideHolder extends FrameLayout {
 
@@ -49,6 +48,8 @@ public class SlideHolder extends FrameLayout {
     private Queue<Runnable> mWhenReady = new LinkedList<Runnable>();
 
     private OnSlideListener mListener;
+
+    private boolean mImmediately = false; // 是否立刻  Add by LQJ 20200810
 
     public SlideHolder(Context context) {
         super(context);
@@ -143,6 +144,7 @@ public class SlideHolder extends FrameLayout {
     }
 
     public void toggle(boolean immediately) {
+        mImmediately = immediately;
         if(immediately) {
             toggleImmediately();
         } else {
@@ -220,11 +222,19 @@ public class SlideHolder extends FrameLayout {
         if(mListener != null) {
             mListener.onSlideCompleted(true);
         }
-
         return true;
     }
 
     public boolean close() {
+
+        // Start  Add by LQJ 2200810
+        if(mImmediately)
+        {
+            closeImmediately();
+            return false;
+        }
+        // End
+
         if(!isOpened() || mAlwaysOpened || mMode == MODE_SLIDE) {
             return false;
         }

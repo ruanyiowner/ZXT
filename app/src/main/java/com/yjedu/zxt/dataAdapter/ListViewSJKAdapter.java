@@ -1,10 +1,5 @@
 package com.yjedu.zxt.dataAdapter;
 
-import java.util.List;
-import com.yjedu.zxt.act.testPaper.ExamActivity;
-import com.yjedu.zxt.R;
-import com.yjedu.zxt.model.mdlSJK;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -15,10 +10,17 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.yjedu.zxt.R;
+import com.yjedu.zxt.act.testPaper.ExamActivity;
+import com.yjedu.zxt.model.mdlSJK;
+
+import java.util.List;
+
 public class ListViewSJKAdapter extends BaseAdapter {
     private List<mdlSJK> items;
     private LayoutInflater inflater;
     public Context context;
+
     public ListViewSJKAdapter(Context context,List<mdlSJK> items)
     {
         this.items = items;

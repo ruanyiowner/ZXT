@@ -1,5 +1,10 @@
 package com.yjedu.zxt;
 
+import android.os.Handler;
+
+import com.yjedu.zxt.api.ResultInfo;
+import com.yjedu.zxt.sys.appConfig;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,12 +13,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import android.os.Handler;
-
-import com.yjedu.zxt.sys.appConfig;
-import com.yjedu.zxt.api.ResultInfo;
-
-public class HttpHelper {
+public class HttpHelper  {
 
 
     /**
@@ -57,6 +57,13 @@ public class HttpHelper {
     }
 
 
+    /**
+     * 读取Url返回的信息
+     * @param urlString
+     * @param connectTimeout
+     * @param readTimeout
+     * @return
+     */
     public static ResultInfo ReqURLToResultInfo(String urlString,int connectTimeout,int readTimeout)
     {
         ResultInfo resultInfo = new ResultInfo();
@@ -90,7 +97,7 @@ public class HttpHelper {
             //e.printStackTrace();
             resultInfo.IsSuccess = false;
             resultInfo.errMsg="获取数据失败！网络可能已经断开。";
-            appConfig config = new appConfig(appConfig._context);
+            //appConfig config = new appConfig(appConfig._context);
             //config.setDynamicIPError();
 
         }finally{

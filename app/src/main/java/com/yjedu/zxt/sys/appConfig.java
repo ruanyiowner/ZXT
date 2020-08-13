@@ -1,27 +1,24 @@
 package com.yjedu.zxt.sys;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+
+import com.yjedu.zxt.HttpHelper;
+import com.yjedu.zxt.api.ResultInfo;
+
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
-import com.yjedu.zxt.HttpHelper;
-import com.yjedu.zxt.api.ResultInfo;
-
 import tools.file.FileUtil;
-import android.R;
-import android.app.Application;
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
 
 public  class appConfig {
 
@@ -333,5 +330,39 @@ public  class appConfig {
 		         }).start();
 		         */
         }
+    }
+
+    /**
+     * 获取本地软件版本号
+     */
+    public static int getLocalVersion(Context ctx) {
+        int localVersion = 0;
+        try {
+            PackageInfo packageInfo = ctx.getApplicationContext()
+                    .getPackageManager()
+                    .getPackageInfo(ctx.getPackageName(), 0);
+            localVersion = packageInfo.versionCode;
+           // LogUtil.d("TAG", "本软件的版本号。。" + localVersion);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return localVersion;
+    }
+
+    /**
+     * 获取本地软件版本号名称
+     */
+    public static String getLocalVersionName(Context ctx) {
+        String localVersion = "";
+        try {
+            PackageInfo packageInfo = ctx.getApplicationContext()
+                    .getPackageManager()
+                    .getPackageInfo(ctx.getPackageName(), 0);
+            localVersion = packageInfo.versionName;
+            //LogUtil.d("TAG", "本软件的版本号。。" + localVersion);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return localVersion;
     }
 }

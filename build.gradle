@@ -7,10 +7,15 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
-        
+        //classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.android.tools.build:gradle:3.5.3'  // 这个版本才支持百度移动统计
+        //classpath 'com.android.tools.build:gradle:3.1.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        // 引入插件库
+
+       // classpath 'com.baidu.mobstat:mtj-circle-plugin:latest.integration'
+
     }
 }
 

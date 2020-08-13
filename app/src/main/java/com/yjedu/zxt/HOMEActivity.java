@@ -1,42 +1,24 @@
 package com.yjedu.zxt;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import android.app.ListActivity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.View;
+import android.widget.AbsListView;
+import android.widget.AbsListView.OnScrollListener;
+import android.widget.Button;
+import android.widget.ListView;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.yjedu.zxt.R;
 import com.yjedu.zxt.dataAdapter.ListViewCommodityAdapter;
 import com.yjedu.zxt.model.mdlCommodity;
 
-import tools.file.FileUtil;
-import tools.file.SDCardHelper;
-import tools.image.AsynImageLoader;
-import tools.image.PicUtil;
-import android.app.ListActivity;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Bundle;
-import android.os.Environment;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.AbsListView.OnScrollListener;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+import java.util.ArrayList;
 // 全局
 public class HOMEActivity extends ListActivity implements OnScrollListener   {
 

@@ -23,6 +23,9 @@ public class DBManager {
         //因为getWritableDatabase内部调用了mContext.openOrCreateDatabase(mName, 0, mFactory);
         //所以要确保context已初始化,我们可以把实例化DBManager的步骤放在Activity的onCreate里
         db = helper.getWritableDatabase();
+
+        android.util.Log.v("MyDebug","111DB db.getVersion："+db.getVersion());
+
     }
 
     public void TestAdd()
@@ -84,7 +87,7 @@ public class DBManager {
         Cursor c = queryTheCursor();
         while (c.moveToNext()) {
             Person person = new Person();
-            person._id = c.getInt(c.getColumnIndex("_id"));
+            person.ID = c.getInt(c.getColumnIndex("ID"));
             person.name = c.getString(c.getColumnIndex("name"));
             person.age = c.getInt(c.getColumnIndex("age"));
             person.info = c.getString(c.getColumnIndex("info"));

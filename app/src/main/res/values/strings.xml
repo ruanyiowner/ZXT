@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">掌学堂</string>
+    <string name="app_name">储物柜</string>
     <string name="action_settings">Settings</string>
-    <string name="file_path">/YJEDU</string>
-    <string name="file_pic_path">/YJEDU/pic</string>
+    <string name="file_path">/RuanYi</string>
+    <string name="file_pic_path">/RuanYi/pic</string>
     <string name="title_activity_qj">QJActivity</string>
     <string name="title_activity_bs">BSActivity</string>
     <string name="title_activity_fj">FJActivity</string>
@@ -26,4 +26,10 @@
     </string-array>
 
     <string name="title_activity_exam">ExamActivity</string>
+    <string name="title_activity_stock_io">StockIOActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_test1">test1Activity</string>
+    <string name="title_activity_test2">test2Activity</string>
+    <string name="title_activity_goods">GoodsActivity</string>
+    <string name="title_activity_share_app">分享本App</string>
 </resources>

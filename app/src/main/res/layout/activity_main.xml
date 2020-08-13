@@ -13,16 +13,31 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:orientation="vertical"
-
             >
-
             <Button
-                android:id="@+id/menu1"
+                android:id="@+id/menuBtnShareApp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="菜单11"
+                android:text="分享本应用"
                 android:textColor="#ffffff"
                 android:textSize="25sp"
+                />
+            <Button
+                android:id="@+id/menuBtnAppInfo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="系统信息"
+                android:textColor="#ffffff"
+                android:textSize="25sp"
+                />
+            <Button
+                android:id="@+id/menuBtnTestDownload"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="测试下载安装"
+                android:textColor="#ffffff"
+                android:textSize="25sp"
+                android:visibility="gone"
                 />
             <Button
                 android:id="@+id/log"
@@ -31,9 +46,8 @@
                 android:text="日志"
                 android:textColor="#ffffff"
                 android:textSize="25sp"
+                android:visibility="gone"
                 />
-
-
         </LinearLayout>
     </ScrollView>
     <LinearLayout
@@ -53,9 +67,7 @@
                 android:src="@drawable/menulist_btn_icon"
                 android:background="#0000"
                 />
-
         </LinearLayout>
-
         <TabHost
             android:id="@android:id/tabhost"
             android:layout_width="fill_parent"
@@ -81,6 +93,5 @@
 
             </LinearLayout>
         </TabHost>
-
     </LinearLayout>
 </com.yjedu.zxt.SlideHolder>

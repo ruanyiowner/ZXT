@@ -1,5 +1,5 @@
 /*
- * 设计者：LHJ
+ * 设计者：LQJ
  * 邮箱：869067911@qq.com
  */
 package com.yjedu.zxt.db.base;
@@ -49,7 +49,7 @@ public class DALFactory<T extends ModelBase> extends DALBase<T>  {
 
     /**
      * 查询记录条数
-     * @param where
+     * @param where  要带where
      */
     public long Count(String where)
     {

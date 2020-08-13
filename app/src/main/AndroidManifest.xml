@@ -1,34 +1,116 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yjedu.zxt">
-
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- 在SDCard中创建与删除文件权限 -->
     <permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /> <!-- 往SDCard写入数据权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 允许应用程序开始运行某个包。 -->
     <uses-permission android:name="android.permission.RUN_INSTRUMENTATION" /> <!-- 允许读取电话状态SIM的权限 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 摄像头权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher"
+        android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".act.testPaper.DownloadActivity"></activity>
+        <activity
+            android:name=".act.sys.AppInfoActivity"
+            android:label="系统相关信息" />
+        <activity
+            android:name=".ShareAppActivity"
+            android:label="@string/title_activity_share_app"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".GoodsActivity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".test.test2Activity"
+            android:label="@string/title_activity_test2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".test.test1Activity"
+            android:label="@string/title_activity_test1"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".StockIOActivity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              开发模式，debug:调试（开发）模式，test:测试模式，pro:生产模式,debug_outside:外面用笔记本开发的模式，
                     注意配合网络连接类型，如果是动态，地址是用 "|" 把端口号隔开
         -->
         <meta-data
             android:name="DEV_MODEL"
-            android:value="pro" />
-        <!-- 网络连接类型  dynamic：动态地址,static:静态地址 -->
+            android:value="pro" /> <!-- 网络连接类型  dynamic：动态地址,static:静态地址 -->
         <meta-data
             android:name="ConnectionType"
             android:value="dynamic" />
-        <activity android:name=".LogDataActivity"></activity>
+
+
+        <!-- 您从百度网站获取的APP KEY，根据实际您的APP申请的APP_KEY进行修改 -->
+        <meta-data
+            android:name="BaiduMobAd_STAT_ID"
+            android:value="854f9e9e6f" />
+
+        <!-- 渠道商编号 -->
+        <meta-data
+            android:name="BaiduMobAd_CHANNEL"
+            android:value="Baidu Market" />
+
+        <!-- 是否开启错误日志统计，默认为false -->
+        <meta-data
+            android:name="BaiduMobAd_EXCEPTION_LOG"
+            android:value="true" />
+
+        <!-- 日志仅在wifi网络下发送，默认为false -->
+        <meta-data
+            android:name="BaiduMobAd_ONLY_WIFI"
+            android:value="false" />
+
+        <!-- 是否获取基站位置信息 ,默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_CELL_LOCATION"
+            android:value="true" />
+
+        <!-- 是否获取GPS位置信息，默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_GPS_LOCATION"
+            android:value="true" />
+
+        <!-- 是否获取WIFI位置信息，默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_WIFI_LOCATION"
+            android:value="true" />
+        <!--  apk安装包下载页面地址  -->
+        <meta-data
+            android:name="ApkPackageWebAddr"
+            android:value="http://s.ruanyi.online:8008/wap/SoftDownLoad.aspx?m=geturl&amp;SoftName=StockManageApp&amp;vertype=lastversion" />
+
+
+
+
+        <activity android:name=".LogDataActivity" />
         <activity android:name=".STKActivity" />
         <activity android:name=".SJKActivity" />
         <activity android:name=".HOMEActivity" />
@@ -36,10 +118,31 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.google.zxing.activity.CaptureActivity"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- authorities： 一个标识，在当前系统内必须是唯一值，一般用包名。 -->
+        <!-- exported：表示该 FileProvider 是否需要公开出去。 -->
+        <!-- granUriPermissions：是否允许授权文件的临时访问权限。这里需要，所以是 true。 -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.yjedu.zxt.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+
+        <receiver android:name=".sys.apkInstall$DownloadReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
