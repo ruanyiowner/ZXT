@@ -10,8 +10,8 @@ android {
         applicationId "com.yjedu.zxt"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 102005
-        versionName "1.2.5"
+        versionCode 1
+        versionName "0.00.001"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
