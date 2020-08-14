@@ -17,12 +17,12 @@ import android.widget.ImageButton;
 import android.widget.TabHost;
 import android.widget.Toast;
 
+import com.baidu.mobstat.StatService;
 import com.yjedu.zxt.act.sys.AppInfoActivity;
 import com.yjedu.zxt.act.testPaper.DownloadActivity;
 import com.yjedu.zxt.sys.AppContext;
 import com.yjedu.zxt.sys.CheckAndInstallNewVer;
 import com.yjedu.zxt.sys.appConfig;
-import com.baidu.mobstat.StatService;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -99,20 +99,19 @@ public class MainActivity extends TabActivity   {
 
 
         // Create an Intent to launch an Activity for the tab (to be reused)
-        intent = new Intent().setClass(this, StockIOActivity.class);
+        intent = new Intent().setClass(this, HOMEActivity.class);
 
         // Initialize a TabSpec for each tab and add it to the TabHost
-        spec = tabHost.newTabSpec("扫描入库").setIndicator("",
-                res.getDrawable(R.drawable.save_btn_ico))
+        spec = tabHost.newTabSpec("首页").setIndicator("",
+                res.getDrawable(R.drawable.home_btn_ico))
                 .setContent(intent);
-       tabHost.addTab(spec);
+        tabHost.addTab(spec);
 
         // Do the same for the other tabs
 
-       // intent = new Intent().setClass(this, SJKActivity.class);
-        intent = new Intent().setClass(this, GoodsActivity.class);
-        spec = tabHost.newTabSpec("物品库").setIndicator("",
-                res.getDrawable(R.drawable.search_btn_ico))
+        intent = new Intent().setClass(this, SJKActivity.class);
+        spec = tabHost.newTabSpec("试卷库").setIndicator("",
+                res.getDrawable(R.drawable.sjk_btn_ico))
                 .setContent(intent);
 
         tabHost.addTab(spec);
@@ -123,9 +122,9 @@ public class MainActivity extends TabActivity   {
                 res.getDrawable(R.drawable.stk_btn_ico))
                 .setContent(intent);
 
-        //tabHost.addTab(spec);
+        tabHost.addTab(spec);
 
-        tabHost.setCurrentTab(0);
+        tabHost.setCurrentTab(1);
 
         /*
         apkInstall.DownloadReceiver mDownloaderReceiver = new apkInstall.DownloadReceiver();

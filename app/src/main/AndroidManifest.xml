@@ -22,8 +22,6 @@
 
     <uses-permission android:name="android.permission.GET_TASKS" />
 
-
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -105,10 +103,11 @@
         <!--  apk安装包下载页面地址  -->
         <meta-data
             android:name="ApkPackageWebAddr"
-            android:value="http://s.ruanyi.online:8008/wap/SoftDownLoad.aspx?m=geturl&amp;SoftName=StockManageApp&amp;vertype=lastversion" />
-
-
-
+            android:value="http://s.ruanyi.online:8008/wap/SoftDownLoad.aspx?m=geturl&amp;SoftName=ZXT&amp;vertype=lastversion" />
+        <!--  apk安装包下载API地址  -->
+        <meta-data
+            android:name="ApkPackageAPIAddr"
+            android:value="http://s.ruanyi.online:8008/api/DownLoadPublishSoft.ashx?m=getSoftFileInfo&amp;SoftName=ZXT&amp;vertype=lastversion" />
 
         <activity android:name=".LogDataActivity" />
         <activity android:name=".STKActivity" />
